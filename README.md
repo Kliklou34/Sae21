@@ -7,5 +7,10 @@ Plusieurs recherches :
 
 
 29/03
-Mise en place d'un serveur apache2
 
+Mise en place d'un serveur apache2
+deja vu en tp R203 
+
+04/04
+
+Debut de la configuration pare feu
