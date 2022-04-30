@@ -61,10 +61,16 @@ Il faut maintenant que j'accepte les connections deja établies , cela veut dire
 Si le retour ce fait sur l'interface externe cela veut donc dire qu'il vient du réseau interne , les membres du réseau interne étant libre , nous devons accepter toutes les connections déja établies sans autres restrictions.</br>
 </br>
 /ip firewall filter</br>
+
 	add chain=forward action=accept connexion-state=established</br>
+	
 </br>
 Cela fait il faut maintenant refuser toutes les autres connections :</br>
 </br>
 /ip firewall filter</br>
 	add chain=forward action=drop</br>
+	
+Le pare feu étant configurer il faut maintenant faire du nat sur la DMZ :
+/ip firewall nat
+	add 
 	
