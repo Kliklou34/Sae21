@@ -103,7 +103,7 @@ Pour ce faire je fais donc une redirection lorsque quelqu'un de l'exterieur tent
 	add action=dst-nat in-interface-list=ExternalInterfaces chain=dstnat dst-port=53 protocol=udp to-addresses=192.168.100.200 to-ports=53 connexion-state=new comment="Redirection des paquets venant de l'exterieur en port 53 udp vers le DNS "
 
 <h3>22/04</h3></br>
-## CISCO
+<h3>CISCO</h3>
 </br>
 Le routeur mikrotik étant configurer il faut donc configurer le nat du routeur cisco.</br>
 Pour ce faire il faut donc attribuer a chaque interface l'aire qui lui correspond , tous les vlan's seront en inside alors que l'interface dmz sera en outside</br>
