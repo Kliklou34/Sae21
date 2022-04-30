@@ -83,6 +83,13 @@ Cela fait il faut maintenant refuser toutes les autres connections :</br>
 	add chain=forward action=drop
 </br>
 Le pare feu étant configurer il faut maintenant faire du nat sur la DMZ :</br>
+Il faut donc que les personnes qui viennent de l'exterieure puissent avoir une ip du réseau interne :
+
+/ip firewall nat</br>
+
+	add action=masquerade chain=srcnat out-interface=ether1 in-interface=ether0 comment="Transforme les adresses ip l'interface interieure en adresse ip de l'interface exterieure .Fait de l'overload"
+
+
 Il faut donc que lorsque une personne exterieure tente d'accéder au serveur web il puisse y accéder , il faut donc faire une redirection</br>
  , je fais donc un redirection vers le serveur web lorsque que quelqu'un tente d'accéder depuis l'exterieur depuis le port 80 en tcp.</br>
 /ip firewall nat</br>
@@ -93,6 +100,9 @@ Mais il faut aussi que si une personne tente d'accéder au serveur dns il y ait 
 Pour ce faire je fais donc une redirection lorsque quelqu'un de l'exterieur tente d'y accéder depuis le port 53 en udp.</br>
 /ip firewall nat</br>
 
-	add action=dst-nat in-interface-list=ExternalInterfaces chain=dstnat dst-port=53protocol=udp to-addresses=192.168.100.2 to-ports=53 comment="Redirection des paquets venant de l'exterieur en port 53 udp vers le DNS "
+	add action=dst-nat in-interface-list=ExternalInterfaces chain=dstnat dst-port=53 protocol=udp to-addresses=192.168.100.2 to-ports=53 connexion-state=new comment="Redirection des paquets venant de l'exterieur en port 53 udp vers le DNS "
 
+22/04
 
+Le routeur mikrotik étant configurer il faut donc configurer le nat du routeur cisco.
+Pour ce faire il faut donc 
