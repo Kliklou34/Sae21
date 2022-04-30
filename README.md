@@ -1,15 +1,15 @@
 # Sae21
-28/03
-Plusieurs recherches :
-	-Installer un serveur DNS sur une machine , https://www.tutos.eu/3446
-	-Installer un serveur web sur sa machine grace a Apache2 , vu dans les anciens TP’s
-	-Configurer un serveur DNS 
+28/03</br>
+Plusieurs recherches :</br>
+	-Installer un serveur DNS sur une machine , https://www.tutos.eu/3446</br>
+	-Installer un serveur web sur sa machine grace a Apache2 , vu dans les anciens TP’s</br>
+	-Configurer un serveur DNS </br>
 
 
-29/03
+29/03</br>
 
-Mise en place d'un serveur apache2
-Comme vu lors du module R203
+Mise en place d'un serveur apache2</br>
+Comme vu lors du module R203</br>
 
 04/04
 
