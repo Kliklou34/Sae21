@@ -1,17 +1,17 @@
 # Sae21
-28/03</br>
+<h3>28/03v</br>
 Plusieurs recherches :</br>
 	-Installer un serveur DNS sur une machine , https://www.tutos.eu/3446</br>
 	-Installer un serveur web sur sa machine grace a Apache2 , vu dans les anciens TP’s</br>
 	-Configurer un serveur DNS </br>
 
 
-29/03</br>
+<h3>29/03</h3></br>
 
 Mise en place d'un serveur apache2</br>
 Comme vu lors du module R203</br>
 
-04/04</br>
+<h3>04/04</h3></br>
 
 Debut de la configuration pare feu</br>
 Pour se faire je me suis donc connecter en ssh sur le routeur Mikrotik .</br>
@@ -42,7 +42,7 @@ Pour ce faire :</br>
 		
 Ainsi je viens donc de donner aux listes les interfaces qui les définissent.</br>
 </br>
-(14;15)/04</br>
+<h3>(14;15)/04</h3></br>
 </br>
 Maintenant que les interfaces sont définis il faut maintenant commencer a creer des regles sur le pare feu.</br>
 Nous avons pour but d'accepter toutes les connections venant de l'exterieur et qui veulent aller sur le serveur web de la DMZ.</br>
@@ -66,7 +66,7 @@ Pour accepter les connexions depuis l'exterieur en tcp port 53 :</br>
 	add chain=forward action=accept protocol=tcp dst-port=53 in-interface-list=ExternalInterfaces comment="Accept tcp port 53"
 
 
-21/04</br>
+<h3>21/04</h3></br>
 </br>
 Il faut maintenant que j'accepte les connections deja établies , cela veut dire que ces machines ont deja traversés le routeur et sont en phase de retours vers la machine .
 Si le retour ce fait sur l'interface externe cela veut donc dire qu'il vient du réseau interne , les membres du réseau interne étant libre , nous devons accepter toutes les connections déja établies sans autres restrictions.</br>
