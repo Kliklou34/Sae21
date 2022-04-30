@@ -87,12 +87,12 @@ Il faut donc que lorsque une personne exterieure tente d'accéder au serveur web
  , je fais donc un redirection vers le serveur web lorsque que quelqu'un tente d'accéder depuis l'exterieur depuis le port 80 en tcp.</br>
 /ip firewall nat</br>
 
-	add action=dst-nat chain=dstnat dst-port=80 in-interface-list=ExternalInterfaces protocol=tcp to-addresses=192.168.100.1 to-ports=80 connexion-state=new 		comment="Redirection des paquets venant de l'exterieur en port 80 tcp " 
+	add action=dst-nat chain=dstnat dst-port=80 in-interface-list=ExternalInterfaces protocol=tcp to-addresses=192.168.100.1 to-ports=80 connexion-state=new 	comment="Redirection des paquets venant de l'exterieur en port 80 tcp vers le serveur web" 
 	
 Mais il faut aussi que si une personne tente d'accéder au serveur dns il y ait une redirection vers celui-ci.</br>
 Pour ce faire je fais donc une redirection lorsque quelqu'un de l'exterieur tente d'y accéder depuis le port 53 en udp.</br>
 /ip firewall nat</br>
 
-	add action=dst-nat in-interface-list=ExternalInterfaces chain=dstnat dst-port=53protocol=udp to-addresses=192.168.100.2 to-ports=53
+	add action=dst-nat in-interface-list=ExternalInterfaces chain=dstnat dst-port=53protocol=udp to-addresses=192.168.100.2 to-ports=53 comment="Redirection des paquets venant de l'exterieur en port 53 udp vers le DNS "
 
 
