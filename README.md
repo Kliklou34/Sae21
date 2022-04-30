@@ -31,7 +31,7 @@ Pour configurer le pare feu il faut tout d'abords ajouter deux listes :</br>
 Ces listes nous permettrons d'identifier sur quels sortie ethernet nous bloquons les accés ,il faut donc que je définisse </br>
 quelle interface fait partie de InternalInterfaces et laquelle fait partie de ExternalInterfaces.</br>
 Pour ce faire :</br>
-/intreface/list/member</br>
+/intreface/list/members</br>
 
 	add
 		InternalInterfaces
