@@ -107,7 +107,7 @@ Pour ce faire je fais donc une redirection lorsque quelqu'un de l'exterieur tent
 Le routeur mikrotik étant configurer il faut donc configurer le nat du routeur cisco.</br>
 Pour ce faire il faut donc attribuer a chaque interface l'aire qui lui correspond , tous les vlan's seront en inside alors que l'interface dmz sera en outside</br>
 L'interface FastEthernet0/0 étant celle qui est en DMZ:</br>
-(config)interfac GigabitEthernet0/0/0</br>
+(config)interfac GigabitEthernet0/0/1</br>
 
  	ip nat outside                 
 
@@ -139,4 +139,4 @@ Il faut aussi refuser toutes les autres arrivées:</br>
 </br>
 Maintenant il faut activer l'overload , car il n'y a qu'une seule adresse publique pour tous les vlan's </br>
 
-	ip nat inside source list 1 interface FastEthernet0/0 overload   
+	ip nat inside source list 1 interface GigabitEthernet0/0/1 overload   
