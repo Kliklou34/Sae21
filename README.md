@@ -102,39 +102,36 @@ Pour ce faire je fais donc une redirection lorsque quelqu'un de l'exterieur tent
 
 	add action=dst-nat in-interface-list=ExternalInterfaces chain=dstnat dst-port=53 protocol=udp to-addresses=192.168.100.2 to-ports=53 connexion-state=new comment="Redirection des paquets venant de l'exterieur en port 53 udp vers le DNS "
 
-22/04</br>
+<h3>22/04</h3></br>
 </br>
 Le routeur mikrotik étant configurer il faut donc configurer le nat du routeur cisco.</br>
 Pour ce faire il faut donc attribuer a chaque interface l'aire qui lui correspond , tous les vlan's seront en inside alors que l'interface dmz sera en outside</br>
 L'interface FastEthernet0/0 étant celle qui est en DMZ:</br>
-(config)interface FastEthernet0/0</br>
+(config)interfac GigabitEthernet0/0/0</br>
 
  	ip nat outside                 
 
 Les interfaces FastEthernet0/1.X sont les vlan's ils sont donc a l'intérieur</br>
-(config)interface FastEthernet0/1.1</br>
+(config)interface GigabitEthernet0/0/0.1</br>
 
  	ip nat inside  
 </br>
-(config)interface FastEthernet0/1.2</br>
+(config)interface GigabitEthernet0/0/0.2</br>
  
  	ip nat inside
 </br></br>
-(config)interface FastEthernet0/1.3</br>
+(config)interface GigabitEthernet0/0/0.3</br>
 
 	ip nat inside 
- </br>
-(config)interface FastEthernet0/1.4</br>
-
-	ip nat inside           
+ </br>    
 	
 Maintenant que j'ai identifier pour chaque interface leurs appartenance , il faut maintenant les autoriser a naté :</br>
 (config)</br>
 
-	access-list 1 permit 10.0.0.0 0.0.255.255              
-	access-list 1 permit 10.1.0.0 0.0.255.255              
-	access-list 1 permit 10.2.0.0 0.0.255.255              
-	access-list 1 permit 10.3.0.0 0.0.255.255      
+	access-list 1 permit 192.168.0.0 0.0.0.255              
+	access-list 1 permit 192.168.1.0 0.0.0.255              
+	access-list 1 permit 192.168.2.0 0.0.0.255              
+   
 </br>
 Il faut aussi refuser toutes les autres arrivées:</br>
 
