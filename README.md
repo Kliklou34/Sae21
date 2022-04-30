@@ -1,5 +1,5 @@
 # Sae21
-<h3>28/03v</br>
+<h3>28/03</br>
 Plusieurs recherches :</br>
 	-Installer un serveur DNS sur une machine , https://www.tutos.eu/3446</br>
 	-Installer un serveur web sur sa machine grace a Apache2 , vu dans les anciens TP’s</br>
