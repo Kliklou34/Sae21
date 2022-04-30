@@ -106,12 +106,12 @@ Pour ce faire je fais donc une redirection lorsque quelqu'un de l'exterieur tent
 </br>
 Le routeur mikrotik étant configurer il faut donc configurer le nat du routeur cisco.</br>
 Pour ce faire il faut donc attribuer a chaque interface l'aire qui lui correspond , tous les vlan's seront en inside alors que l'interface dmz sera en outside</br>
-L'interface FastEthernet0/0 étant celle qui est en DMZ:</br>
+L'interface GigabitEthernet0/0/1 étant celle qui est en DMZ:</br>
 (config)interfac GigabitEthernet0/0/1</br>
 
  	ip nat outside                 
 
-Les interfaces FastEthernet0/1.X sont les vlan's ils sont donc a l'intérieur</br>
+Les interfaces GigabitEthernet0/0/0.X sont les vlan's ils sont donc a l'intérieur</br>
 (config)interface GigabitEthernet0/0/0.1</br>
 
  	ip nat inside  
