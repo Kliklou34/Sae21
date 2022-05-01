@@ -129,9 +129,9 @@ Les interfaces GigabitEthernet0/0/0.X sont les vlan's ils sont donc a l'intérie
 Maintenant que j'ai identifier pour chaque interface leurs appartenance , il faut maintenant les autoriser a naté :</br>
 (config)</br>
 
-	access-list 1 permit 192.168.0.0 0.0.0.255              
 	access-list 1 permit 192.168.1.0 0.0.0.255              
 	access-list 1 permit 192.168.2.0 0.0.0.255              
+	access-list 1 permit 192.168.3.0 0.0.0.255              
    
 </br>
 Il faut aussi refuser toutes les autres arrivées:</br>
